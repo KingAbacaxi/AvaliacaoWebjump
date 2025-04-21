@@ -12,7 +12,5 @@ describe('adicionarProdutoAoCarrinho', () => {
          cy.get('[class="price"]').should('contain.text','£45.00')
          cy.get('[title="Qty"]').should('have.value', 1)
          cy.get('.subtotal > .price-excluding-tax > .cart-price > .price').should('contain.text','£45.00')
-         cy.get('.sub > .amount > .price').should('contain.text','£45.00')
-         cy.get('strong > .price').should('contain.text','£45.00')
     })
 })

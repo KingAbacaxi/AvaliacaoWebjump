@@ -3,7 +3,7 @@ describe('login', () => {
         //arrange
         cy.visit('https://magento.nublue.co.uk/')
         //act
-        cy.get('[href="https://magento.nublue.co.uk/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8%2C/"]').click()
+        cy.get('[href="https://magento.nublue.co.uk/customer/account/login/referer/aHR0cHM6Ly9tYWdlbnRvLm51Ymx1ZS5jby51ay8%2C/"]').eq(0).click()
         cy.get('[title="Email"]').type('roni_cost@example.com')
         cy.get('[title="Password"]').type('roni_cost3@example.com')
         cy.get('[name="send"]').click()

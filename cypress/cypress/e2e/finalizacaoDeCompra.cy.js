@@ -9,6 +9,7 @@ describe('finalizacaoDeCompra', () => {
         cy.get('[class="grand totals"]')
         cy.wait(5)
         cy.get('[data-role="proceed-to-checkout"]').click()
+        cy.wait(10)
         cy.get('[class="control _with-tooltip"]').click()
         cy.get('[type="email"]').eq(1).type('spinellibisneto@hotmail.com')
         cy.get('[name="firstname"]').type('Bruno')
@@ -22,8 +23,10 @@ describe('finalizacaoDeCompra', () => {
         cy.get('[value="flatrate_flatrate"]').click()
         cy.get('[class="button action continue primary"]').click()
         cy.get('[placeholder="Enter discount code"]')
+        cy.wait(10)
         cy.get('[title="Place Order"]').click()
         //assert
+        cy.wait(10)
         cy.url().should('eq', 'https://magento.nublue.co.uk/checkout/onepage/success/')
         cy.get('[class="page-title"]').should('contain.text','Thank you for your purchase!')
         cy.get('[class="checkout-success"]').should('contain.text','Your order # is:')
