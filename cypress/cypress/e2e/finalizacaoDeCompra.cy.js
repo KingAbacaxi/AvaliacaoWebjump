@@ -6,10 +6,10 @@ describe('finalizacaoDeCompra', () => {
         cy.get(':nth-child(6) > .product-item-info > .product-item-photo > .product-image-container > .product-image-wrapper > .product-image-photo').click()
         cy.get('#product-addtocart-button > span').click()
         cy.get('.message-success > div > a').click()
-        cy.get('[class="grand totals"]')
+        cy.get('[class="grand totals"]') //ao longo do teste, alguns comandos cy.get como esse são usados para esperar um certo item da página para dar mais tempo aos comandos seguintes para esperar antes de clicar em certos elementos que jã estão disponíveis na tela mas que não redirecionam como esperado
         cy.wait(5)
         cy.get('[data-role="proceed-to-checkout"]').click()
-        cy.wait(10)
+        cy.wait(10) //alguns comandos wait como esse também são usados para tentar aguardar os carregamentos entre telas para evitar que os comandos seguintes tentem achar um elemento antes que ele fique disponível/na tela anterior a esperada
         cy.get('[class="control _with-tooltip"]').click()
         cy.get('[type="email"]').eq(1).type('spinellibisneto@hotmail.com')
         cy.get('[name="firstname"]').type('Bruno')
